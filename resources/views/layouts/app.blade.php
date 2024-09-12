@@ -18,7 +18,7 @@
     <body class="bg-white">
         <header class="p-5 border-b shadow bg-beige-nutelio">
             <div class="container mx-auto flex justify-between items-center">
-                <a href="#" class="text-3xl font-bold text-green-nutelio">Nutelio</a>
+                <a href="{{ route('home') }}" class="text-3xl font-bold text-green-nutelio">Nutelio</a>
 
                 @auth
                     <nav class="flex items-center gap-2">
@@ -49,8 +49,8 @@
 
                 @guest
                     <nav class="flex items-center gap-2">
-                        <a class="font-bold uppercase text-green-nutelio text-sm" href="#">Login</a>
-                        <a class="font-bold uppercase text-green-nutelio text-sm" href="#">Crear Cuenta</a>
+                        <a class="font-bold uppercase text-green-nutelio text-sm border p-1 rounded" href="{{ route('login') }}">Ingresar</a>
+                        <a class="font-bold uppercase bg-green-nutelio text-beige-nutelio text-sm border p-1 rounded" href="{{ route('register') }}">Crear Cuenta</a>
                     </nav>
                 @endguest
 
