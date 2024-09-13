@@ -18,11 +18,12 @@
     <body class="bg-white">
         <header class="p-5 border-b shadow bg-beige-nutelio">
             <div class="container mx-auto flex justify-between items-center">
-                <a href="{{ route('home') }}" class="text-3xl font-bold text-green-nutelio">Nutelio</a>
-
+                
                 @auth
+                    <a href="{{ route('menu') }}" class="text-3xl font-bold text-green-nutelio">Nutelio</a>
+
                     <nav class="flex items-center gap-2">
-                        <a href="{{ route('#') }}" class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer">
+                        <a href="{{ route('home') }}" class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer">
 
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                                 <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
@@ -32,13 +33,13 @@
                             Crear
                         </a>
 
-                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('#', auth()->user()->username ) }}">
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('home', auth()->user()->username ) }}">
                             Hola: 
                             <span class="font-normal"> 
                                 {{ auth()->user()->username }} 
                             </span>
                         </a>
-                        <form method="POST" action="{{ route('#') }}">
+                        <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="font-bold uppercase text-gray-600 text-sm">
                                 Cerrar Sesion
@@ -48,6 +49,8 @@
                 @endauth
 
                 @guest
+                    <a href="{{ route('home') }}" class="text-3xl font-bold text-green-nutelio">Nutelio</a>
+
                     <nav class="flex items-center gap-2">
                         <a class="font-bold uppercase text-green-nutelio text-sm border p-1 rounded" href="{{ route('login') }}">Ingresar</a>
                         <a class="font-bold uppercase bg-green-nutelio text-beige-nutelio text-sm border p-1 rounded" href="{{ route('register') }}">Crear Cuenta</a>
