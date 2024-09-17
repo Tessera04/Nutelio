@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
@@ -24,3 +25,6 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/menu', function () {
     return view('menu');
 })->name('menu');
+
+//PACIENTES
+Route::get('/paciente', [PacienteController::class, 'index'])->name('paciente');
