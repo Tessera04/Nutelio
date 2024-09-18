@@ -5,9 +5,9 @@
 @endsection
 
 @section('contenido')
-<div class="relative flex ">
-    <div class="w-full">
-        <img src="{{ asset('img/login-picture.jpg') }}" alt="Login picture">
+<div class="relative flex min-w-full">
+    <div >
+        <img src="{{ asset('img/login-picture.jpg') }}" alt="Login picture" class="w-screen h-screen">
     </div>
 
     <div class="bg-green-nutelio w-full">

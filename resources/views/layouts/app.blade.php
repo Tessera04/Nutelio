@@ -68,10 +68,10 @@
             </div>
         </header>
 
-        <main class="container min-w-full">
+        <main class="relative container min-w-full min-h-screen flex">
             @auth
                 <!--Sidebar-->
-                <div class="relative min-h-screen md:flex">
+                <div class="absolute min-h-screen md:flex">
                     <aside id="aside" class="bg-green-nutelio text-beige-nutelio w-80 z-10 px-2 py-4 absolute inset-y-0 left-0 md:relative transform md:translate-x-0 overflow-y-auto
                                 transition ease-in-out duration-200 shadow-lg">
                         <div class="flex items-center justify-between px-2">
@@ -94,15 +94,15 @@
             @endauth
 
             <!--Sector principal-->
-            <div>
-                <h2 class="font-black text-center text-3xl">
+            <div class="bg-beige-nutelio">
+                <h2 class="font-black text-center text-4xl my-4 text-brown-nutelio">
                     @yield('titulo')
                 </h2>
                     @yield('contenido')
             </div>
         </main>
 
-        <footer class="mt-10 text-center p-5 text-gray-500 font-bold uppercase">
+        <footer class="text-center p-5 text-gray-500 bg-beige-nutelio font-bold uppercase">
             Tessera04 - Nutelio - Todos los derechos reservados {{now()->year}}
         </footer>
     </body>

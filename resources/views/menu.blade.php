@@ -5,5 +5,7 @@
 @endsection
 
 @section('contenido')
-    
+    <div class="bg-beige-nutelio">
+        <h1>Menu Principal</h1>
+    </div>
 @endsection

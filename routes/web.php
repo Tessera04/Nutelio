@@ -28,3 +28,4 @@ Route::get('/menu', function () {
 
 //PACIENTES
 Route::get('/paciente', [PacienteController::class, 'index'])->name('paciente');
+Route::post('/paciente', [PacienteController::class, 'store'])->name('paciente');

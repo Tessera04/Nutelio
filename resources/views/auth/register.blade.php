@@ -7,7 +7,7 @@
 @section('contenido')
     <div class="relative flex">
         <div class="w-full">
-            <img src="{{ asset('img/register-picture.jpg') }}" alt="Register picture">
+            <img src="{{ asset('img/register-picture.jpg') }}" alt="Register picture" class="w-screen h-screen">
         </div>
 
         <div class="bg-green-nutelio w-full">
