@@ -15,7 +15,7 @@ class PacienteController extends Controller
     }
 
     public function store(Request $request){
-        dd($request);
+        //dd($request);
 
         //Validar campos
         $request->validate([

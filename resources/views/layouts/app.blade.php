@@ -71,7 +71,7 @@
         <main class="relative container min-w-full min-h-screen flex">
             @auth
                 <!--Sidebar-->
-                <div class="absolute min-h-screen md:flex">
+                <div class="absolute min-h-screen md:flex shadow-2xl shadow-green-nutelio">
                     <aside id="aside" class="bg-green-nutelio text-beige-nutelio w-80 z-10 px-2 py-4 absolute inset-y-0 left-0 md:relative transform md:translate-x-0 overflow-y-auto
                                 transition ease-in-out duration-200 shadow-lg">
                         <div class="flex items-center justify-between px-2">
@@ -89,6 +89,14 @@
                                 </svg>                                  
                             </button>
                         </div>
+                        
+                        <x-button-sidebar :onclick="route('paciente')">
+                            Tabla de Pacientes
+                        </x-button-sidebar>
+
+                        <x-button-sidebar>
+                            Tabla de Provincias
+                        </x-button-sidebar>
                     </aside>
                 </div>
             @endauth
