@@ -9,8 +9,15 @@ use Illuminate\Http\Request;
 class PacienteController extends Controller
 {
     public function index(){
+        $pacientes = Paciente::with('provincia')->get();
+
+        return view('paciente.tabla-paciente', compact('pacientes'));
+    }
+
+    public function create()
+    {
         $provincias = Provincia::all();
-        
+
         return view('paciente.paciente', ['provincias' => $provincias]);
     }
 

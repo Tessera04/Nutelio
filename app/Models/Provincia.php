@@ -12,4 +12,9 @@ class Provincia extends Model
     protected $fillable = [
         'province_name',
     ];
+
+    public function pacientes()
+    {
+        return $this->hasMany(Paciente::class, 'province');
+    }
 }

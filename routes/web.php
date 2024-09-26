@@ -27,5 +27,6 @@ Route::get('/menu', function () {
 })->name('menu');
 
 //PACIENTES
-Route::get('/paciente', [PacienteController::class, 'index'])->name('paciente');
-Route::post('/paciente', [PacienteController::class, 'store'])->name('paciente');
+Route::get('/tabla-paciente', [PacienteController::class, 'index'])->name('tabla-paciente');
+Route::get('/paciente', [PacienteController::class, 'create'])->name('paciente');
+Route::post('/paciente', [PacienteController::class, 'store'])->middleware(['auth'])->name('paciente.guardar');

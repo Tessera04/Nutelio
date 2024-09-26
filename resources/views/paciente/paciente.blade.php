@@ -10,7 +10,7 @@
 
 @section('contenido')
 <div class="w-screen">
-    <form action="{{ route('register') }}" method="POST" novalidate>
+    <form action="{{ route('paciente.guardar') }}" method="POST" novalidate>
         @csrf
         <div class="w-full h-full flex flex-col items-center justify-center bg-beige-nutelio">
             
