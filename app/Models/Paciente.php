@@ -22,11 +22,17 @@ class Paciente extends Model
         'province',
         'location',
         'address',
-        'dni'
+        'dni',
+        'user_id'
     ];
 
     public function provincia()
     {
         return $this->belongsTo(Provincia::class, 'province'); // 'provincia_id' es la columna de referencia en la tabla de usuarios
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id'); // 'id' es la columna de referencia en la tabla de users
     }
 }

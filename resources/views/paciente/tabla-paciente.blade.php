@@ -24,6 +24,7 @@
                     <th class="py-3 px-6 text-left">Direccion</th>
                     <th class="py-3 px-6 text-left">DNI</th>
                     <th class="py-3 px-6 text-center">Eliminar</th>
+                    <th class="py-3 px-6 text-center">Perfil</th>
                 </tr>
             </thead>
             <tbody class="text-brown-nutelio text-sm font-light">
@@ -47,10 +48,17 @@
                         <td class="py-3 px-6 text-xl font-medium">{{ $paciente->address }}</td>
                         <td class="py-3 px-6 text-xl font-medium">{{ $paciente->dni }}</td>
                         <td class="py-3 px-6 text-2xl">
-                            <x-button-sidebar class="w-full bg-red-400">
+                            <x-button-sidebar class="w-full bg-red-400" :route="route('paciente.destroy', ['paciente' => $paciente->id])">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 text-red-600">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                 </svg>                                  
+                            </x-button-sidebar>
+                        </td>
+                        <td class="py-3 px-6 text-2xl">
+                            <x-button-sidebar class="w-full" :route="route('perfil-paciente', ['paciente' => $paciente->id])">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-brown-nutelio">
+                                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+                                </svg>                                                                  
                             </x-button-sidebar>
                         </td>
                     </tr>

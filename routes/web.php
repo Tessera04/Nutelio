@@ -24,9 +24,11 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 //PANTALLA PRINCIPAL
 Route::get('/menu', function () {
     return view('menu');
-})->name('menu');
+})->middleware(['auth'])->name('menu');
 
 //PACIENTES
-Route::get('/tabla-paciente', [PacienteController::class, 'index'])->name('tabla-paciente');
-Route::get('/paciente', [PacienteController::class, 'create'])->name('paciente');
+Route::get('/tabla-paciente', [PacienteController::class, 'index'])->middleware(['auth'])->name('tabla-paciente');
+Route::get('/paciente', [PacienteController::class, 'create'])->middleware(['auth'])->name('paciente');
 Route::post('/paciente', [PacienteController::class, 'store'])->middleware(['auth'])->name('paciente.guardar');
+Route::get('/perfil-paciente/{paciente}', [PacienteController::class, 'show'])->middleware(['auth'])->name('perfil-paciente');
+Route::delete('/paciente/{paciente}', [PacienteController::class, 'destroy'])->middleware(['auth'])->name('paciente.destroy');

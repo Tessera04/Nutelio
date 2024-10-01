@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Paciente;
 use App\Models\Provincia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PacienteController extends Controller
 {
     public function index(){
-        $pacientes = Paciente::with('provincia')->get();
+        $pacientes = Paciente::with('provincia')
+                            ->where('user_id', Auth::id())
+                            ->get();
 
         return view('paciente.tabla-paciente', compact('pacientes'));
     }
@@ -46,9 +49,22 @@ class PacienteController extends Controller
             'location' => $request->location,
             'address' => $request->address,
             'dni' => $request->dni,
+            'user_id' => Auth::id(),
         ]);
 
         //Redirecciona al menu
-        return redirect()->route('menu');
+        return redirect()->route('menu')->with('success', 'Paciente creado exitosamente.');
+    }
+
+    public function show(Paciente $paciente){
+        return view('paciente.perfil-paciente', [
+            'paciente' => $paciente
+        ]);
+    }
+
+    public function destroy(Paciente $paciente){
+        $paciente->delete();
+
+        return redirect()->route('tabla-paciente')->with('success', 'Paciente eliminado correctamente');
     }
 }
