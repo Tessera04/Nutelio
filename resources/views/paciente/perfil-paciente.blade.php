@@ -11,7 +11,6 @@
 @section('contenido')
     <div class="w-screen flex justify-center items-center pt-10">
         <div class="bg-white px-10 py-16 rounded-2xl ">
-            <img src="" alt="Imagen perfil {{ $paciente->name }}">
             <h1 class="text-3xl font-bold text-center"> {{ $paciente->name }} </h1>
             <h1 class="text-3xl font-bold text-center"> {{ $paciente->surname }} </h1>
 
@@ -64,7 +63,7 @@
                 class="border border-beige-dark-nutelio rounded-lg p-2 bg-beige-nutelio text-gray-700 cursor-not-allowed w-full focus:outline-none"
             />
 
-            <a href="{{ route('paciente') }}" class="flex items-center justify-center gap-2 bg-white border p-2 mt-6 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer">
+            <a href="{{ route('paciente.editar', $paciente->id) }}" class="flex items-center justify-center gap-2 bg-white border p-2 mt-6 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer">
                               
                 Editar Paciente
 

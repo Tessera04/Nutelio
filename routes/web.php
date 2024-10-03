@@ -33,6 +33,8 @@ Route::get('/paciente', [PacienteController::class, 'create'])->middleware(['aut
 Route::post('/paciente', [PacienteController::class, 'store'])->middleware(['auth'])->name('paciente.guardar');
 Route::delete('/paciente/{paciente}', [PacienteController::class, 'destroy'])->middleware(['auth'])->name('paciente.destroy');
 Route::get('/perfil-paciente/{paciente}', [PacienteController::class, 'show'])->middleware(['auth'])->name('perfil-paciente');
+Route::get('/paciente/{id}/editar', [PacienteController::class, 'editar'])->middleware(['auth'])->name('paciente.editar');
+Route::put('/paciente/{id}', [PacienteController::class, 'actualizar'])->middleware(['auth'])->name('paciente.actualizar');
 
 //Whatsapp
 Route::post('/send', [WppController::class, 'send'])->middleware(['auth'])->name('send');

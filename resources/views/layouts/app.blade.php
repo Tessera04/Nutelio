@@ -97,13 +97,21 @@
                         <x-button-sidebar :route="route('paciente')">
                             IMC
                         </x-button-sidebar>
+
+                        <x-button-sidebar :route="route('paciente')">
+                            Turnos
+                        </x-button-sidebar>
+
+                        <x-button-sidebar :route="route('paciente')">
+                            Alimentos
+                        </x-button-sidebar>
                     </aside>
                 </div>
             @endauth
 
             <!--Sector principal-->
             <div class="bg-beige-nutelio">
-                <h2 class="font-black text-center text-4xl my-4 text-brown-nutelio">
+                <h2 class="font-black text-center text-4xl text-brown-nutelio">
                     @yield('titulo')
                 </h2>
                     @yield('contenido')

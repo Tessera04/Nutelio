@@ -5,12 +5,24 @@
 @endsection
 
 @section('titulo')
-    Crear Paciente
+    @if(isset($paciente))
+        Editar Paciente
+    @else
+        Crear Paciente
+    @endif
 @endsection
 
 @section('contenido')
 <div class="w-screen">
-    <form action="{{ route('paciente.guardar') }}" method="POST" novalidate>
+    <!-- Comprobamos si estamos creando o editando -->
+    @if(isset($paciente))
+        <!-- Para edición: cambiar ruta y texto del botón -->
+        <form action="{{ route('paciente.actualizar', $paciente->id) }}" method="POST" novalidate>
+        @method('PUT')
+    @else
+        <!-- Para creación -->
+        <form action="{{ route('paciente.guardar') }}" method="POST" novalidate>
+    @endif
         @csrf
         <div class="w-full h-full flex flex-col items-center justify-center bg-beige-nutelio">
             
@@ -21,7 +33,7 @@
                     type="text" 
                     id="name" 
                     name="name" 
-                    value="{{ old('name') }}"
+                    value="{{ old('name', isset($paciente) ? $paciente->name : '') }}"
                     placeholder="Nombre/s"
                     required>
             </div>
@@ -33,7 +45,7 @@
                     type="text" 
                     id="surname" 
                     name="surname" 
-                    value="{{ old('surname') }}"
+                    value="{{ old('surname', isset($paciente) ? $paciente->surname : '') }}"
                     placeholder="Apellido/s"
                     required>
             </div>
@@ -45,7 +57,7 @@
                     type="email" 
                     id="email" 
                     name="email" 
-                    value="{{ old('email') }}"
+                    value="{{ old('surname', isset($paciente) ? $paciente->email : '') }}"
                     placeholder="E-mail"
                     required>
             </div>
@@ -59,7 +71,7 @@
                     type="tel" 
                     id="phone" 
                     name="phone" 
-                    value="{{ old('phone') }}" 
+                    value="{{ old('phone', isset($paciente) ? $paciente->phone : '') }}" 
                     placeholder="Telefono"
                     required>
             </div>
@@ -68,7 +80,9 @@
                 <label class="text-brown-nutelio font-bold pl-1" for="province">Provincia:</label>
                 <select name="province" id="province" class="rounded-md hover:cursor-pointer px-3 py-2">
                     @foreach ($provincias as $provincia)
-                        <option value="{{ $provincia->id }}">{{ $provincia->province_name }}</option>
+                    <option value="{{ $provincia->id }}" {{ (isset($paciente) && $paciente->province_id == $provincia->id) ? 'selected' : '' }}>
+                        {{ $provincia->province_name }}
+                    </option>
                     @endforeach
                 </select>
             </div>
@@ -81,7 +95,7 @@
                     type="text" 
                     id="location" 
                     name="location" 
-                    value="{{ old('location') }}" 
+                    value="{{ old('location', isset($paciente) ? $paciente->location : '') }}" 
                     placeholder="Localidad"
                     required>
             </div>
@@ -94,7 +108,7 @@
                     type="text" 
                     id="address" 
                     name="address" 
-                    value="{{ old('address') }}" 
+                    value="{{ old('address', isset($paciente) ? $paciente->address : '') }}"  
                     placeholder="Direccion"
                     required>
             </div>
@@ -107,13 +121,13 @@
                     type="text" 
                     id="dni" 
                     name="dni" 
-                    value="{{ old('dni') }}" 
+                    value="{{ old('dni', isset($paciente) ? $paciente->dni : '') }}"  
                     placeholder="DNI"
                     required>
             </div>
 
             <input type="submit" 
-            value="Crear Paciente" 
+            value="{{ isset($paciente) ? 'Actualizar Paciente' : 'Crear Paciente' }}"
             class="bg-green-nutelio hover:bg-beige-dark-nutelio transition-colors cursor-pointer uppercase font-bold mt-4 px-10 py-3 text-beige-nutelio rounded-lg"/>
         </div>
     </form>

@@ -62,6 +62,33 @@ class PacienteController extends Controller
         ]);
     }
 
+    public function editar($id) {
+        $paciente = Paciente::findOrFail($id);
+        $provincias = Provincia::all(); // Cargar las provincias para el select
+        return view('paciente.paciente', compact('paciente', 'provincias'));
+    }
+
+    public function actualizar(Request $request, $id) {
+        $paciente = Paciente::findOrFail($id);
+    
+        // Validaciones (opcional)
+        $request->validate([
+            'name' => 'required|max:30',
+            'surname' => 'required|max:30',
+            'email' => 'required|email',
+            'phone' => 'required|max:15',
+            'province' => 'required|max:30',
+            'location' => 'required|max:50',
+            'address' => 'required|max:70',
+            'dni' => 'required|max:10'
+        ]);
+    
+        // Actualizar el paciente
+        $paciente->update($request->all());
+    
+        return redirect()->route('tabla-paciente')->with('success', 'Paciente actualizado exitosamente.');
+    }
+
     public function destroy(Paciente $paciente){
         $paciente->delete();
 
