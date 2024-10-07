@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('titulo_window')
+    @if(isset($paciente))
+    Editar Paciente
+    @else
     Crear Paciente
+    @endif
 @endsection
 
 @section('titulo')

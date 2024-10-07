@@ -35,4 +35,9 @@ class Paciente extends Model
     {
         return $this->belongsTo(User::class, 'id'); // 'id' es la columna de referencia en la tabla de users
     }
+
+    public function biometricData()
+    {
+        return $this->hasMany(BiometricData::class, 'paciente_id');
+    }
 }

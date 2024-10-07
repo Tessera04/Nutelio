@@ -94,6 +94,10 @@
                             Tabla de Pacientes
                         </x-button-sidebar>
 
+                        <x-button-sidebar :route="route('datos-biometricos')">
+                            Datos Biometricos
+                        </x-button-sidebar>
+
                         <x-button-sidebar :route="route('paciente')">
                             IMC
                         </x-button-sidebar>

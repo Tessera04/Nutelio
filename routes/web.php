@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BiometricDataController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -35,6 +36,10 @@ Route::delete('/paciente/{paciente}', [PacienteController::class, 'destroy'])->m
 Route::get('/perfil-paciente/{paciente}', [PacienteController::class, 'show'])->middleware(['auth'])->name('perfil-paciente');
 Route::get('/paciente/{id}/editar', [PacienteController::class, 'editar'])->middleware(['auth'])->name('paciente.editar');
 Route::put('/paciente/{id}', [PacienteController::class, 'actualizar'])->middleware(['auth'])->name('paciente.actualizar');
+
+//DATOS BIOMETRICOS
+Route::get('/biometricData', [BiometricDataController::class, 'create'])->middleware(['auth'])->name('datos-biometricos');
+Route::post('/biometricData', [BiometricDataController::class, 'store'])->middleware(['auth'])->name('datos-biometricos.guardar');
 
 //Whatsapp
 Route::post('/send', [WppController::class, 'send'])->middleware(['auth'])->name('send');
