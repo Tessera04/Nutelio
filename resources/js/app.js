@@ -26,3 +26,6 @@ function cerrarAside() {
 // Asignamos los eventos de click a los botones
 abrirButton.addEventListener('click', abrirAside);
 cerrarButton.addEventListener('click', cerrarAside);
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
