@@ -25,7 +25,7 @@
 
         <div class="grid grid-cols-1 gap-4 mb-4 text-2xl mt-5 w-3/4">
             <label class="text-brown-nutelio font-bold pl-1" for="paciente_id">Paciente:</label>
-            <select name="paciente_id" id="paciente_id" class="rounded-md hover:cursor-pointer px-3 py-2">
+            <select name="paciente_id" id="paciente_id" class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md">
                 @foreach ($pacientes as $paciente)
                     <option value="{{ $paciente->id }}">
                         {{ $paciente->name . ' ' . $paciente->surname }}
@@ -37,7 +37,7 @@
         <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
             <label class="text-brown-nutelio font-bold pl-1" for="height">Altura:</label>
             <input 
-                class="rounded-md hover:cursor-pointer px-3 py-2" 
+                class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                 type="number" 
                 min="0" 
                 max="1" 
@@ -53,7 +53,7 @@
         <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
             <label class="text-brown-nutelio font-bold pl-1" for="weight">Peso:</label>
             <input 
-                class="rounded-md hover:cursor-pointer px-3 py-2" 
+                class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                 type="number" 
                 min="0" 
                 max="1" 
@@ -67,7 +67,7 @@
         <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
             <label class="text-brown-nutelio font-bold pl-1" for="body_fat_percentage">Porcentaje de grasa corporal:</label>
             <input 
-                class="rounded-md hover:cursor-pointer px-3 py-2" 
+                class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                 type="number" 
                 min="0" 
                 max="1" 
@@ -81,7 +81,7 @@
         <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
             <label class="text-brown-nutelio font-bold pl-1" for="muscle_mass_percentage">Porcentaje de masa muscular:</label>
             <input 
-                class="rounded-md hover:cursor-pointer px-3 py-2" 
+                class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                 type="number" 
                 min="0" 
                 max="1" 
@@ -95,7 +95,7 @@
         <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
             <label class="text-brown-nutelio font-bold pl-1" for="waist_circumference">Circunferencia de cadera:</label>
             <input 
-                class="rounded-md hover:cursor-pointer px-3 py-2" 
+                class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                 type="number" 
                 min="0" 
                 max="200" 
@@ -109,7 +109,7 @@
         <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
             <label class="text-brown-nutelio font-bold pl-1" for="hip_circumference">Circunferencia de cintura:</label>
             <input 
-                class="rounded-md hover:cursor-pointer px-3 py-2" 
+                class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                 type="number" 
                 min="0" 
                 max="200" 
@@ -123,7 +123,7 @@
         <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
             <label class="text-brown-nutelio font-bold pl-1" for="chest_circumference">Circunferencia de pecho:</label>
             <input 
-                class="rounded-md hover:cursor-pointer px-3 py-2" 
+                class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                 type="number" 
                 min="0" 
                 max="200" 
@@ -136,7 +136,7 @@
 
         <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
             <label class="text-brown-nutelio font-bold pl-1" for="gender">Sexo biologico:</label>
-            <select name="gender" id="gender" class="rounded-md hover:cursor-pointer px-3 py-2">
+            <select name="gender" id="gender" class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md">
                     <option value="1">
                         Masculino
                     </option>

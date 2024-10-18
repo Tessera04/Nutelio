@@ -74,19 +74,18 @@
         </div>
 
         <div class="bg-white px-10 py-16 rounded-2xl col-span-4 col-start-4">
-            <h1 class="text-3xl font-bold text-center"> {{ $paciente->name }} </h1>
-            <h1 class="text-3xl font-bold text-center"> {{ $paciente->surname }} </h1>
+            <h1 class="text-3xl font-bold text-center">Datos Biometricos</h1>
 
-            <h2 class="text-lg pt-2">Email:</h2>
+            <h2 class="text-lg pt-2">Altura:</h2>
             <input 
                 type="text" 
-                value="{{ $paciente->email }}" 
+                value="{{ $paciente->biometricData->body_fat_percentage }}" 
                 readonly 
                 class="border border-beige-dark-nutelio rounded-lg p-2 bg-beige-nutelio text-gray-700 cursor-not-allowed w-full focus:outline-none"
             />
 
 
-            <h2 class="text-lg pt-2">Telefono:</h2>
+            <h2 class="text-lg pt-2">Peso:</h2>
             <input 
                 type="text" 
                 value="{{ $paciente->phone }}" 
@@ -94,7 +93,7 @@
                 class="border border-beige-dark-nutelio rounded-lg p-2 bg-beige-nutelio text-gray-700 cursor-not-allowed w-full focus:outline-none"
             />
 
-            <h2 class="text-lg pt-2">Provincia:</h2>
+            <h2 class="text-lg pt-2">Porcentaje de grasa corporal:</h2>
             <input 
                 type="text" 
                 value="{{ $paciente->provincia->province_name }}" 
@@ -102,7 +101,7 @@
                 class="border border-beige-dark-nutelio rounded-lg p-2 bg-beige-nutelio text-gray-700 cursor-not-allowed w-full focus:outline-none"
             />
 
-            <h2 class="text-lg pt-2">Localidad:</h2>
+            <h2 class="text-lg pt-2">Porcentaje de masa muscular:</h2>
             <input 
                 type="text" 
                 value="{{ $paciente->location }}" 
@@ -110,7 +109,7 @@
                 class="border border-beige-dark-nutelio rounded-lg p-2 bg-beige-nutelio text-gray-700 cursor-not-allowed w-full focus:outline-none"
             />
 
-            <h2 class="text-lg pt-2">Direccion:</h2>
+            <h2 class="text-lg pt-2">Circunferencia de cadera:</h2>
             <input 
                 type="text" 
                 value="{{ $paciente->address }}" 
@@ -118,7 +117,23 @@
                 class="border border-beige-dark-nutelio rounded-lg p-2 bg-beige-nutelio text-gray-700 cursor-not-allowed w-full focus:outline-none"
             />
 
-            <h2 class="text-lg pt-2">DNI:</h2>
+            <h2 class="text-lg pt-2">Circunferencia de cintura:</h2>
+            <input 
+                type="text" 
+                value="{{ $paciente->dni }}" 
+                readonly 
+                class="border border-beige-dark-nutelio rounded-lg p-2 bg-beige-nutelio text-gray-700 cursor-not-allowed w-full focus:outline-none"
+            />
+
+            <h2 class="text-lg pt-2">Circunferencia de pecho:</h2>
+            <input 
+                type="text" 
+                value="{{ $paciente->dni }}" 
+                readonly 
+                class="border border-beige-dark-nutelio rounded-lg p-2 bg-beige-nutelio text-gray-700 cursor-not-allowed w-full focus:outline-none"
+            />
+
+            <h2 class="text-lg pt-2">Sexo Biologico:</h2>
             <input 
                 type="text" 
                 value="{{ $paciente->dni }}" 

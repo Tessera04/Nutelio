@@ -33,7 +33,7 @@
             <div class="grid grid-cols-1 gap-4 mb-4 text-2xl mt-5 w-3/4">
                 <label class="text-brown-nutelio font-bold pl-1" for="name">Nombre/s:</label>
                 <input 
-                    class="rounded-md hover:cursor-pointer px-3 py-2" 
+                    class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                     type="text" 
                     id="name" 
                     name="name" 
@@ -45,7 +45,7 @@
             <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
                 <label class="text-brown-nutelio font-bold pl-1" for="surname">Apellido/s:</label>
                 <input 
-                    class="rounded-md hover:cursor-pointer px-3 py-2" 
+                    class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                     type="text" 
                     id="surname" 
                     name="surname" 
@@ -57,7 +57,7 @@
             <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
                 <label class="text-brown-nutelio font-bold pl-1" for="email">E-mail:</label>
                 <input 
-                    class="rounded-md hover:cursor-pointer px-3 py-2" 
+                    class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
                     type="email" 
                     id="email" 
                     name="email" 
@@ -70,7 +70,7 @@
             <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
                 <label class="text-brown-nutelio font-bold pl-1" for="phone">Telefono:</label>
                 <input 
-                    class="rounded-md hover:cursor-pointer px-3 py-2" 
+                    class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
 
                     type="tel" 
                     id="phone" 
@@ -82,7 +82,7 @@
 
             <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
                 <label class="text-brown-nutelio font-bold pl-1" for="province">Provincia:</label>
-                <select name="province" id="province" class="rounded-md hover:cursor-pointer px-3 py-2">
+                <select name="province" id="province" class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md">
                     @foreach ($provincias as $provincia)
                     <option value="{{ $provincia->id }}" {{ (isset($paciente) && $paciente->province_id == $provincia->id) ? 'selected' : '' }}>
                         {{ $provincia->province_name }}
@@ -94,7 +94,7 @@
             <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
                 <label class="text-brown-nutelio font-bold pl-1" for="location">Localidad:</label>
                 <input 
-                    class="rounded-md hover:cursor-pointer px-3 py-2" 
+                    class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
 
                     type="text" 
                     id="location" 
@@ -107,7 +107,7 @@
             <div class="grid grid-cols-1 gap-4 mb-4 text-2xl w-3/4">
                 <label class="text-brown-nutelio font-bold pl-1" for="address">Direccion:</label>
                 <input 
-                    class="rounded-md hover:cursor-pointer px-3 py-2" 
+                    class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
 
                     type="text" 
                     id="address" 
@@ -120,7 +120,7 @@
             <div class="grid grid-cols-1 gap-4 mb-4 text-2xl pb-4 w-3/4">
                 <label class="text-brown-nutelio font-bold pl-1" for="dni">Dni:</label>
                 <input 
-                    class="rounded-md hover:cursor-pointer px-3 py-2" 
+                    class="rounded-md hover:cursor-pointer px-3 py-2 shadow-md" 
 
                     type="text" 
                     id="dni" 
